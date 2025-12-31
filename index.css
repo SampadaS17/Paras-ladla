@@ -531,3 +531,41 @@ section {
     align-self: center;
   }
 }
+
+/* ======================================
+   FORCE FIX — WHAT HE OFFERS (MOBILE)
+   ====================================== */
+
+@media (max-width: 768px) {
+
+  /* Reset any previous height rules */
+  #offerings .card {
+    height: auto !important;
+    min-height: 260px !important;
+    padding: 20px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+  }
+
+  /* Normalize icon spacing (THIS fixes first card issue) */
+  #offerings .card img,
+  #offerings .card .icon,
+  #offerings .card span {
+    margin-top: 0 !important;
+    margin-bottom: 12px !important;
+  }
+
+  /* Normalize paragraph spacing */
+  #offerings .card p {
+    margin: 8px 0 0 0 !important;
+    line-height: 1.4 !important;
+  }
+
+  /* Force button position */
+  #offerings .card a,
+  #offerings .card .btn {
+    margin-top: auto !important;
+    align-self: center !important;
+  }
+}
