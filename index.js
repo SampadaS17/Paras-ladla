@@ -14,17 +14,7 @@
 // function toggleMenu() {
 //     document.getElementById("navLinks").classList.toggle("show");
 // }
-const langToggle = document.getElementById('lang-toggle');
-let currentLang = 'en';
 
-langToggle.addEventListener('click', () => {
-    currentLang = currentLang === 'en' ? 'hi' : 'en';
-    langToggle.textContent = currentLang === 'en' ? 'हिंदी' : 'English';
-
-    document.querySelectorAll('[data-en]').forEach(el => {
-        el.textContent = el.getAttribute(`data-${currentLang}`);
-    });
-});
 
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -59,3 +49,16 @@ function closeJourney() {
         modal.style.display = "none";
     }
 }
+
+
+const langToggle = document.getElementById('lang-toggle');
+let currentLang = 'en';
+
+langToggle.addEventListener('click', () => {
+    currentLang = currentLang === 'en' ? 'hi' : 'en';
+    langToggle.textContent = currentLang === 'en' ? 'हिंदी' : 'English';
+
+    document.querySelectorAll('[data-en]').forEach(el => {
+        el.textContent = el.getAttribute(`data-${currentLang}`);
+    });
+});
