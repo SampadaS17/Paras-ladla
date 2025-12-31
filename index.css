@@ -470,3 +470,64 @@ section {
     text-align: center;
   }
 }
+/* =========================
+   MOBILE FIXES (FINAL)
+   ========================= */
+
+@media (max-width: 768px) {
+
+  /* WHAT HE OFFERS - already fine but ensure consistency */
+  .offers-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* CONNECT WITH US - FORCE 2x2 GRID */
+  .connect-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 16px;
+  }
+
+  /* Ensure cards stretch equally */
+  .connect-grid .card {
+    min-height: 140px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+}
+@media (max-width: 768px) {
+  .connect-grid .card {
+    padding: 20px;
+    border-radius: 14px;
+  }
+}
+/* =========================
+   MOBILE FIX – WHAT HE OFFERS
+   ========================= */
+
+@media (max-width: 768px) {
+
+  /* Force equal card heights */
+  .offers-grid .card {
+    min-height: 280px;
+    max-height: 280px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+  }
+
+  /* Limit text height so first card doesn't grow */
+  .offers-grid .card p {
+    line-height: 1.4;
+    max-height: 4.2em; /* ~3 lines */
+    overflow: hidden;
+  }
+
+  /* Keep button always aligned */
+  .offers-grid .btn {
+    margin-top: auto;
+    align-self: center;
+  }
+}
