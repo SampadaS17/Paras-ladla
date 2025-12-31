@@ -510,3 +510,21 @@ section {
         grid-template-columns: repeat(2, 1fr);
     }
 }
+
+.site-footer {
+  background: #111;
+  color: #ccc;
+  text-align: center;
+  padding: 15px 10px;
+  font-size: 14px;
+}
+
+.site-footer p {
+  margin: 4px 0;
+}
+
+.developer-credit {
+  font-size: 13px;
+  color: #888;
+}
+
