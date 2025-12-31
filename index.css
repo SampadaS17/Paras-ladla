@@ -648,3 +648,85 @@ section {
     text-align: center;
   }
 }
+/* ===============================
+   MOBILE FIX — FINAL FOR OFFERS
+   =============================== */
+@media (max-width: 768px) {
+  /* Make all offer cards uniform */
+  .offers-container,
+  .offers-grid {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+    justify-items: center;
+  }
+
+  .offer-card,
+  #offerings .card {
+    min-height: 260px !important;
+    max-height: auto !important;
+    padding: 22px 18px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+    text-align: center !important;
+  }
+
+  .offer-card .icon,
+  #offerings .card .icon,
+  #offerings .card img,
+  #offerings .card span {
+    margin-top: 0 !important;
+    margin-bottom: 12px !important;
+  }
+
+  .offer-card p,
+  #offerings .card p {
+    margin: 8px 0 0 0 !important;
+    line-height: 1.5 !important;
+    max-height: none !important;
+  }
+
+  .offer-card .book-btn,
+  #offerings .card a,
+  #offerings .card .btn {
+    margin-top: auto !important;
+    align-self: center !important;
+  }
+}
+
+/* ===============================
+   MOBILE FIX — FINAL FOR ABOUT
+   =============================== */
+@media (max-width: 768px) {
+  .about-container {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 32px !important;
+    align-items: center !important;
+  }
+
+  .about-slider {
+    width: 100% !important;
+    height: 300px !important;
+  }
+
+  .about-text {
+    width: 100% !important;
+    text-align: center !important;
+  }
+
+  .about-text h2 {
+    font-size: 26px !important;
+  }
+
+  .about-text p {
+    font-size: 14px !important;
+    line-height: 1.6 !important;
+  }
+
+  .read-btn {
+    display: inline-block !important;
+    margin: 16px auto 0 auto !important;
+  }
+}
