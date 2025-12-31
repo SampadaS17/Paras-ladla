@@ -51,14 +51,30 @@ function closeJourney() {
 }
 
 
-const langToggle = document.getElementById('lang-toggle');
-let currentLang = 'en';
+document.addEventListener('DOMContentLoaded', () => {
 
-langToggle.addEventListener('click', () => {
-    currentLang = currentLang === 'en' ? 'hi' : 'en';
-    langToggle.textContent = currentLang === 'en' ? 'हिंदी' : 'English';
+    const langToggle = document.getElementById('lang-toggle');
+    let currentLang = 'en';
 
-    document.querySelectorAll('[data-en]').forEach(el => {
-        el.textContent = el.getAttribute(`data-${currentLang}`);
+    langToggle.addEventListener('click', () => {
+        currentLang = currentLang === 'en' ? 'hi' : 'en';
+        langToggle.textContent = currentLang === 'en' ? 'हिंदी' : 'English';
+
+        // Toggle navbar and section text
+        document.querySelectorAll('[data-en]').forEach(el => {
+            el.textContent = el.getAttribute(`data-${currentLang}`);
+        });
+
+        // Toggle modal content separately
+        const modalText = document.querySelector('#journeyModal .modal-text');
+        if (modalText) {
+            if (currentLang === 'en') {
+                modalText.innerHTML = modalText.getAttribute('data-en');
+            } else {
+                modalText.innerHTML = modalText.getAttribute('data-hi');
+            }
+        }
     });
+
 });
+
