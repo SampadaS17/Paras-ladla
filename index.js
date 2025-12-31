@@ -51,30 +51,25 @@ function closeJourney() {
 }
 
 
-document.addEventListener('DOMContentLoaded', () => {
+const langToggle = document.getElementById('lang-toggle');
+let currentLang = 'en';
 
-    const langToggle = document.getElementById('lang-toggle');
-    let currentLang = 'en';
+langToggle.addEventListener('click', () => {
+    currentLang = currentLang === 'en' ? 'hi' : 'en';
+    langToggle.textContent = currentLang === 'en' ? 'हिंदी' : 'English';
 
-    langToggle.addEventListener('click', () => {
-        currentLang = currentLang === 'en' ? 'hi' : 'en';
-        langToggle.textContent = currentLang === 'en' ? 'हिंदी' : 'English';
-
-        // Toggle navbar and section text
-        document.querySelectorAll('[data-en]').forEach(el => {
-            el.textContent = el.getAttribute(`data-${currentLang}`);
-        });
-
-        // Toggle modal content separately
-        const modalText = document.querySelector('#journeyModal .modal-text');
-        if (modalText) {
-            if (currentLang === 'en') {
-                modalText.innerHTML = modalText.getAttribute('data-en');
-            } else {
-                modalText.innerHTML = modalText.getAttribute('data-hi');
-            }
-        }
+    // Page content
+    document.querySelectorAll('[data-en]').forEach(el => {
+        el.textContent = el.getAttribute(`data-${currentLang}`);
     });
 
+    // Modal content
+    const modalText = document.getElementById('modalText');
+    const modalTextHi = document.getElementById('modalTextHi');
+    if (currentLang === 'en') {
+        modalText.innerHTML = modalText.dataset.en || modalText.innerHTML;
+    } else {
+        modalText.innerHTML = modalTextHi.innerHTML;
+    }
 });
 
